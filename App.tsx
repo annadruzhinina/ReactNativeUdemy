@@ -1,8 +1,17 @@
 import React, {useState} from 'react';
-import {Button, Image, StyleSheet, Text, TextInput, View} from 'react-native';
+import {
+  TouchableOpacity,
+  Image,
+  StyleSheet,
+  Text,
+  TextInput,
+  View,
+} from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {endEvent} from 'react-native/Libraries/Performance/Systrace';
+
+import Button from './components/Button';
 
 function App(): JSX.Element {
   const [enteredGoalText, setEnteredGoalText] = useState('');
@@ -31,8 +40,12 @@ function App(): JSX.Element {
       </View>
       <View style={styles.goalsContainer}>
         {/* <Text>List of goals...</Text> */}
-        {courseGoals.map(goal => (
-          <Text key={goal}>{goal}</Text>
+        {courseGoals.map((goal, index) => (
+          <Text
+            key={goal}
+            style={[styles.goalText, index % 2 === 0 ? styles.oddLine : null]}>
+            {goal}
+          </Text>
         ))}
       </View>
     </View>
@@ -45,6 +58,7 @@ const styles = StyleSheet.create({
     paddingTop: 50,
     paddingHorizontal: 16,
   },
+
   inputContainer: {
     flex: 1,
     flexDirection: 'row',
@@ -63,6 +77,12 @@ const styles = StyleSheet.create({
   },
   goalsContainer: {
     flex: 5,
+  },
+  goalText: {
+    fontSize: 16,
+  },
+  oddLine: {
+    backgroundColor: '#CCCCFF',
   },
 });
 
