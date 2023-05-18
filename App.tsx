@@ -6,6 +6,7 @@ import {
   Text,
   TextInput,
   View,
+  ScrollView,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -39,14 +40,18 @@ function App(): JSX.Element {
         <Button title="Add Goal" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        {/* <Text>List of goals...</Text> */}
-        {courseGoals.map((goal, index) => (
-          <View
-            key={goal}
-            style={[styles.goalText, index % 2 === 0 ? styles.oddLine : null]}>
-            <Text style={styles.goalTextColor}>{goal}</Text>
-          </View>
-        ))}
+        <ScrollView alwaysBounceVertical={false}>
+          {courseGoals.map((goal, index) => (
+            <View
+              key={goal}
+              style={[
+                styles.goalText,
+                index % 2 === 0 ? styles.oddLine : null,
+              ]}>
+              <Text style={styles.goalTextColor}>{goal}</Text>
+            </View>
+          ))}
+        </ScrollView>
       </View>
     </View>
   );
@@ -80,7 +85,7 @@ const styles = StyleSheet.create({
   },
   goalText: {
     margin: 1,
-    padding: 10,
+    padding: 8,
     borderRadius: 4,
     backgroundColor: '#8467D7',
   },
@@ -90,7 +95,7 @@ const styles = StyleSheet.create({
   goalTextColor: {
     color: 'black',
     fontSize: 16,
-    fontWeight: '500',
+    fontWeight: '400',
   },
 });
 
