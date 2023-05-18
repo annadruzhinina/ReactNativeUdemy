@@ -80,6 +80,11 @@ const styles = StyleSheet.create({
   },
   goalText: {
     fontSize: 16,
+    margin: 2,
+    padding: 8,
+    borderRadius: 6,
+    backgroundColor: '#8467D7',
+    // color: 'white',
   },
   oddLine: {
     backgroundColor: '#CCCCFF',

@@ -18,13 +18,13 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     borderRadius: 4,
     elevation: 3,
-    backgroundColor: '#CCCCFF',
+    backgroundColor: '#8467D7',
   },
   text: {
     fontSize: 16,
     lineHeight: 20,
     fontWeight: 'bold',
     letterSpacing: 0.25,
-    color: 'black',
+    color: 'white',
   },
 });
