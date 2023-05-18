@@ -41,11 +41,11 @@ function App(): JSX.Element {
       <View style={styles.goalsContainer}>
         {/* <Text>List of goals...</Text> */}
         {courseGoals.map((goal, index) => (
-          <Text
+          <View
             key={goal}
             style={[styles.goalText, index % 2 === 0 ? styles.oddLine : null]}>
-            {goal}
-          </Text>
+            <Text>{goal}</Text>
+          </View>
         ))}
       </View>
     </View>
@@ -80,11 +80,10 @@ const styles = StyleSheet.create({
   },
   goalText: {
     fontSize: 16,
-    margin: 2,
-    padding: 8,
-    borderRadius: 6,
+    margin: 1,
+    padding: 12,
+    borderRadius: 4,
     backgroundColor: '#8467D7',
-    // color: 'white',
   },
   oddLine: {
     backgroundColor: '#CCCCFF',
