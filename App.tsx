@@ -44,7 +44,7 @@ function App(): JSX.Element {
           <View
             key={goal}
             style={[styles.goalText, index % 2 === 0 ? styles.oddLine : null]}>
-            <Text>{goal}</Text>
+            <Text style={styles.goalTextColor}>{goal}</Text>
           </View>
         ))}
       </View>
@@ -79,14 +79,18 @@ const styles = StyleSheet.create({
     flex: 5,
   },
   goalText: {
-    fontSize: 16,
     margin: 1,
-    padding: 12,
+    padding: 10,
     borderRadius: 4,
     backgroundColor: '#8467D7',
   },
   oddLine: {
     backgroundColor: '#CCCCFF',
+  },
+  goalTextColor: {
+    color: 'black',
+    fontSize: 16,
+    fontWeight: '500',
   },
 });
 
