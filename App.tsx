@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import {
-  TouchableOpacity,
-  Image,
   StyleSheet,
   Text,
   TextInput,
   View,
   ScrollView,
+  FlatList,
 } from 'react-native';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
@@ -25,7 +24,8 @@ function App(): JSX.Element {
   function addGoalHandler() {
     setCourseGoals(currentCourseGoals => [
       ...currentCourseGoals,
-      enteredGoalText,
+      // enteredGoalText,
+      {text: enteredGoalText, id: Math.random().toString()},
     ]);
   }
 
@@ -40,7 +40,7 @@ function App(): JSX.Element {
         <Button title="Add Goal" onPress={addGoalHandler} />
       </View>
       <View style={styles.goalsContainer}>
-        <ScrollView alwaysBounceVertical={false}>
+        {/* <ScrollView alwaysBounceVertical={false}>
           {courseGoals.map((goal, index) => (
             <View
               key={goal}
@@ -51,7 +51,22 @@ function App(): JSX.Element {
               <Text style={styles.goalTextColor}>{goal}</Text>
             </View>
           ))}
-        </ScrollView>
+        </ScrollView> */}
+        <FlatList
+          data={courseGoals}
+          renderItem={itemData => {
+            itemData.index; //0,1,2,...
+            return (
+              <View style={styles.goalText}>
+                <Text style={styles.goalTextColor}>{itemData.item.text}</Text>
+              </View>
+            );
+          }}
+          keyExtractor={(item, index) => {
+            return item.id;
+          }}
+          alwaysBounceVertical={false}
+        />
       </View>
     </View>
   );
@@ -93,9 +108,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#CCCCFF',
   },
   goalTextColor: {
-    color: 'black',
+    color: 'white',
     fontSize: 16,
-    fontWeight: '400',
+    fontWeight: '600',
   },
 });
 
