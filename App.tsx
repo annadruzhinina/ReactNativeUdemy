@@ -2,11 +2,8 @@ import React, {useState} from 'react';
 
 // React Native
 import {StyleSheet, TextInput, View, ScrollView, FlatList} from 'react-native';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
-import {endEvent} from 'react-native/Libraries/Performance/Systrace';
 
 // Components
-import Button from './components/Button';
 import GoalItem from './components/GoalItem';
 import GoalInput from './components/GoalInput';
 
@@ -20,6 +17,10 @@ function App(): JSX.Element {
     ]);
   }
 
+  function deleteGoalHandler() {
+    console.log('Delete');
+  }
+
   return (
     <View style={styles.appContainer}>
       <GoalInput onAddGoal={addGoalHandler} />
@@ -28,7 +29,12 @@ function App(): JSX.Element {
           data={courseGoals}
           renderItem={itemData => {
             // itemData.index; //0,1,2,...
-            return <GoalItem text={itemData.item.text} />;
+            return (
+              <GoalItem
+                text={itemData.item.text}
+                onDeleteItem={deleteGoalHandler}
+              />
+            );
           }}
           keyExtractor={(item, index) => {
             return item.id;

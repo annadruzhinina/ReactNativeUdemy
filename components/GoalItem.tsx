@@ -1,11 +1,13 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Pressable} from 'react-native';
 
 function GoalItem(props) {
   return (
-    <View style={styles.goalText}>
-      <Text style={styles.goalTextColor}>{props.text}</Text>
-    </View>
+    <Pressable onPress={props.onDelekteItem}>
+      <View style={styles.goalText}>
+        <Text style={styles.goalTextColor}>{props.text}</Text>
+      </View>
+    </Pressable>
   );
 }
 
@@ -22,7 +24,7 @@ const styles = StyleSheet.create({
   goalTextColor: {
     color: 'white',
     fontSize: 16,
-    fontWeight: '600',
+    fontWeight: '500',
   },
 });
 
