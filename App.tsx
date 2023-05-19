@@ -30,7 +30,6 @@ function App(): JSX.Element {
         <FlatList
           data={courseGoals}
           renderItem={itemData => {
-            // itemData.index; //0,1,2,...
             return (
               <GoalItem
                 text={itemData.item.text}
