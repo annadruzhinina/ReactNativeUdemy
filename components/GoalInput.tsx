@@ -27,7 +27,7 @@ export default function GoalInput(props) {
         />
         <View style={styles.buttonContainer}>
           <Button title="Add Goal" onPress={addGoalHandler} />
-          <Button title="Cancel" />
+          <Button title="Cancel" onPress={props.onCancel} />
         </View>
       </View>
     </Modal>
