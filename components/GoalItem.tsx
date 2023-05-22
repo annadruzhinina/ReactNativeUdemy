@@ -25,13 +25,12 @@ const styles = StyleSheet.create({
   // },
   goalTextColor: {
     color: 'white',
-    padding: 8,
+    padding: 10,
     fontSize: 14,
     fontWeight: '500',
   },
   pressedItem: {
     opacity: 0.8,
-    color: '#280b5a',
   },
 });
 
