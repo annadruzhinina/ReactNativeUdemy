@@ -16,9 +16,9 @@ function GoalItem(props) {
 
 const styles = StyleSheet.create({
   goalText: {
-    margin: 1,
     borderRadius: 6,
     backgroundColor: '#5e0acc',
+    width: '100%',
   },
   // oddLine: {
   //   backgroundColor: '#CCCCFF',
@@ -27,7 +27,7 @@ const styles = StyleSheet.create({
     color: 'white',
     padding: 10,
     fontSize: 14,
-    fontWeight: '500',
+    fontWeight: '700',
   },
   pressedItem: {
     opacity: 0.8,

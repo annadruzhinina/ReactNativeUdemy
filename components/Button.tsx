@@ -12,14 +12,13 @@ export default function Button(props) {
 
 const styles = StyleSheet.create({
   button: {
-    width: '40%',
-    marginHorizontal: 8,
+    width: '100%',
     marginBottom: 16,
     alignItems: 'center',
     justifyContent: 'center',
     paddingVertical: 8,
     paddingHorizontal: 8,
-    borderRadius: 4,
+    borderRadius: 6,
     elevation: 3,
     backgroundColor: '#5e0acc',
   },
